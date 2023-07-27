@@ -1,0 +1,23 @@
+{
+    
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "cwd": "${workspaceRoot}",
+            "executable": "./build/MQTT_STM32.elf",
+            "name": "Debug with OpenOCD",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "openocd",
+            "showDevDebugOutput": "raw",
+            "configFiles": [
+                "D:/embed_tools/gun-tools-chain/openocd-20230111/OpenOCD-20230111-0.12.0/share/openocd/scripts/interface/cmsis-dap.cfg",
+                "D:/embed_tools/gun-tools-chain/openocd-20230111/OpenOCD-20230111-0.12.0/share/openocd/scripts/target/stm32f1x.cfg"
+            ],
+            "searchDir": [],
+            "runToEntryPoint": "main"
+        }
+
+    ]
+}

@@ -1,0 +1,53 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "Build STM32 Firmware",
+			"command": "make -j2",
+			"args": [],
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build"
+		},
+		{
+			"type": "shell",
+			"label": "Build and Download",
+			"command": "openocd",
+			"args": [
+				"-f",
+				"D:/embed_tools/gun-tools-chain/openocd-20230111/OpenOCD-20230111-0.12.0/share/openocd/scripts/interface/cmsis-dap.cfg",
+				"-f",
+				"D:/embed_tools/gun-tools-chain/openocd-20230111/OpenOCD-20230111-0.12.0/share/openocd/scripts/target/stm32f1x.cfg",
+				"-c",
+				"program build/MQTT_STM32.elf verify reset exit"
+			],
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"dependsOn": "Build STM32 Firmware"
+		},
+		{
+			"type": "cppbuild",
+			"label": "C/C++: arm-none-eabi-gcc.exe build active file",
+			"command": "D:\\embed_tools\\gun-tools-chain\\12.2 rel1\\bin\\arm-none-eabi-gcc.exe",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-g",
+				"${file}",
+				"-o",
+				"${fileDirname}\\${fileBasenameNoExtension}.exe"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "compiler: \"D:\\embed_tools\\gun-tools-chain\\12.2 rel1\\bin\\arm-none-eabi-gcc.exe\""
+		}
+	]
+}
