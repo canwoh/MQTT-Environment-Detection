@@ -11,9 +11,9 @@
 
 //void UARTReceiveIdleCallback(UART_HandleTypeDef* huart);
 void NetDataReceiveHandle(void);
-void NetConnectInit(void);
-uint8_t parse_json_msg(uint8_t *json_msg,uint8_t json_len);
-void ESP8266SendCmd(uint8_t *cmd, uint8_t len, uint8_t *expect_data);
-
+uint8_t NetConnectInit(void);
+uint8_t ESP8266SendCmd(uint8_t *cmd, uint8_t len, uint8_t *expect_data);
+uint8_t ESP8266SendMsg(void);
+uint8_t ESP8266ReceiveMsg(void);
 
 #endif

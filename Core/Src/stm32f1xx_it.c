@@ -220,15 +220,7 @@ void TIM2_IRQHandler(void)
 void USART2_IRQHandler(void)
 {
   /* USER CODE BEGIN USART2_IRQn 0 */
-  // if(__HAL_UART_GET_FLAG(&huart2,UART_FLAG_IDLE) && __HAL_UART_GET_FLAG(&huart2,UART_IT_IDLE))
-  // {
-  //     __HAL_UART_DISABLE_IT(&huart2,UART_IT_IDLE);
-  //     UARTReceiveIdleCallback(&huart2);
-  //     __HAL_UART_CLEAR_IDLEFLAG(&huart2);
-  //     __HAL_UART_ENABLE_IT(&huart2,UART_IT_IDLE); 
-  //     printf("debug1\r\n");
-  // }
-  
+  NetDataReceiveHandle();
   /* USER CODE END USART2_IRQn 0 */
   HAL_UART_IRQHandler(&huart2);
   /* USER CODE BEGIN USART2_IRQn 1 */

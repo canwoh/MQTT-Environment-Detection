@@ -67,7 +67,8 @@ UserApp/user_main.c \
 UserApp/utils/retarget.c \
 BSP/utils/core_json.c \
 BSP/ESP8266/net_connect.c \
-BSP/DHT11/dht11.c 
+BSP/DHT11/dht11.c \
+BSP/LED/led.c
 
 # ASM sources
 ASM_SOURCES =  \
@@ -134,7 +135,8 @@ C_INCLUDES =  \
 -IUserApp \
 -IUserApp/utils \
 -IBSP/DHT11 \
--IBSP/ESP8266
+-IBSP/ESP8266 \
+-IBSP/LED
 
 
 # compile gcc flags
